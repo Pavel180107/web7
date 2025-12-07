@@ -1,0 +1,330 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+
+header {
+    border-bottom: 2px solid #ffffff;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00b3ff !important;
+}
+
+
+.card {
+    border: none;
+    border-radius: 8px;
+}
+
+.card-title {
+    color: #000000;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000000;
+}
+
+/* Table  */
+.table th {
+    background-color: #000000 !important;
+    color: #ffffff;
+    text-align: center !important;
+    border: 1px solid #333;
+}
+
+
+/* Links */
+a {
+    color: #0066cc;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #00b3ff;
+}
+
+/* Form  */
+.btn-dark {
+    background-color: #000000;
+    border-color: #000000;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-dark:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+/* Image Map */
+img[usemap] {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer*/
+footer a {
+    color: #00b3ff;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Calculator Styles */
+#calculator .form-label {
+    color: #000000;
+    font-weight: 600;
+}
+
+#calculator .alert {
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+#calculator .btn-dark {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+#calculator .btn-dark:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+#quantity-error {
+    display: none;
+}
+
+/* Новые стили для калькулятора услуги */
+#service-calculator .form-check {
+    margin-bottom: 0.5rem;
+}
+
+#service-calculator .form-check-input:checked {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+#service-calculator .alert-info {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+    
+    .btn {
+        display: none !important;
+    }
+}
+
+/* Стили для галереи */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-slider {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.gallery-slider .slide {
+    flex: 0 0 33.333%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-slider img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.slider-controls {
+    max-width: 300px;
+    margin: 20px auto 0;
+}
+
+.slider-pager {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1a237e;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.pager-numbers {
+    display: block;
+}
+
+.pager-dots {
+    display: none;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #000000;
+    transform: scale(1.2);
+}
+
+.slider-arrow {
+    background: linear-gradient(135deg, #000000 0%, #2e2e2e 100%);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.slider-arrow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Visual feedback for cyclic navigation */
+.slider-arrow.cyclic-prev::after {
+    content: '↶';
+    position: absolute;
+    font-size: 0.7em;
+    bottom: -5px;
+    right: -5px;
+}
+
+.slider-arrow.cyclic-next::after {
+    content: '↷';
+    position: absolute;
+    font-size: 0.7em;
+    bottom: -5px;
+    left: -5px;
+}
+
+/* Адаптивность галереи */
+@media (max-width: 768px) {
+    .gallery-slider .slide {
+        flex: 0 0 100%;
+    }
+    
+    .gallery-slider img {
+        max-height: 350px;
+    }
+    
+    .pager-numbers {
+        display: block;
+    }
+    
+    .pager-dots {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-slider .slide {
+        flex: 0 0 50%;
+    }
+    
+    .gallery-slider img {
+        max-height: 350px;
+    }
+    
+    .pager-numbers {
+        display: block;
+    }
+    
+    .pager-dots {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    .gallery-slider img {
+        max-height: 450px;
+    }
+    
+    .pager-numbers {
+        display: none;
+    }
+    
+    .pager-dots {
+        display: flex;
+    }
+}
+
+
+/* Галерея теперь не выходит за пределы контейнера */
+.gallery-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Центрирование содержимого слайдов */
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
